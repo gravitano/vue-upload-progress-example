@@ -14,14 +14,14 @@
             file: null
         }),
         computed: {
-            ...mapGetters({
+            ...mapGetters('uploader', {
                 percentage: 'uploadPercentage'
             })
         },
         methods: {
             handleFileChanged(event) {
                 const file = event.target.files[0];
-                this.$store.dispatch('upload', file)
+                this.$store.dispatch('uploader/upload', file)
             }
         }
     }

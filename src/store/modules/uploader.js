@@ -1,10 +1,7 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
 import axios from 'axios'
 
-Vue.use(Vuex);
-
-export default new Vuex.Store({
+export default {
+    namespaced: true,
     state: {
         uploadPercentage: 0
     },
@@ -34,4 +31,4 @@ export default new Vuex.Store({
     getters: {
         uploadPercentage: state => state.uploadPercentage
     }
-})
+}
