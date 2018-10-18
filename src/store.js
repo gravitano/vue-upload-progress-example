@@ -4,6 +4,8 @@ import axios from 'axios'
 
 Vue.use(Vuex);
 
+const UPLOAD_URL = 'https://yourdomain.com/upload';
+
 export default new Vuex.Store({
     state: {
         uploadPercentage: 0
@@ -23,7 +25,7 @@ export default new Vuex.Store({
             };
             const data = new FormData();
             data.append('image', file);
-            axios.post('https://upload.service.gits.id/upload', data, config).then(data => {
+            axios.post(UPLOAD_URL, data, config).then(data => {
                 console.log(data)
             }).then(err => {
                 console.log(err)
