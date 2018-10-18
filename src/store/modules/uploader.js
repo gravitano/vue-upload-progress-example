@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const UPLOAD_URL = 'https://yourdomain.com/upload';
+const UPLOAD_URL = process.env.VUE_APP_UPLOAD_URL;
 
 export default {
     namespaced: true,
