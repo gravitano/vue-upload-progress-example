@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+const UPLOAD_URL = 'https://yourdomain.com/upload';
+
 export default {
     namespaced: true,
     state: {
@@ -20,7 +22,7 @@ export default {
             };
             const data = new FormData();
             data.append('image', file);
-            axios.post('https://upload.service.gits.id/upload', data, config).then(data => {
+            axios.post(UPLOAD_URL, data, config).then(data => {
                 console.log(data)
             }).then(err => {
                 console.log(err)
