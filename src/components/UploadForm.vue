@@ -1,15 +1,19 @@
 <template>
-    <div>
-        <input type="file" @change="handleFileChanged"/>
-        <div>Upload Percentage: {{ percentage }}</div>
-        <!--<button @click="upload">Submit</button>-->
-    </div>
+    <v-container>
+        <v-card>
+            <v-card-text>
+                <input type="file" @change="handleFileChanged"/>
+                <!--<div class="mt-3">Upload Percentage: {{ percentage }}</div>-->
+                <v-progress-linear v-model="percentage"></v-progress-linear>
+            </v-card-text>
+        </v-card>
+    </v-container>
 </template>
 
 <script>
     import {mapGetters} from 'vuex'
 
-    export default  {
+    export default {
         data: () => ({
             file: null
         }),
